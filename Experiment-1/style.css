@@ -1,6 +1,7 @@
 body{
     text-align: center;
     background-color: antiquewhite;
+    
 }
 h1{
     background-color: chocolate;
@@ -8,7 +9,10 @@ h1{
 label {
     color:brown;
     font-family: 'Times New Roman', Times, serif;
-    
+    padding: 10px;
+    margin: 25px; 
+    display: flex;
+    flex-direction: row;   
 }
 input{
     width: 250px;
@@ -18,11 +22,11 @@ input{
     border-color: chocolate;
     background-color: darkgray;
     font-family: 'Times New Roman', Times, serif;
+    
 }
 button{
     color:brown;
     font-family: 'Times New Roman', Times, serif;
     border-color: chocolate;
     border-radius: 10px;
-
 }
