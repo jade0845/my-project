@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MobileVerse - Coming Soon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Starry background */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #fff;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #8b5cf6, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+
+        /* Content tiles */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .content-tile {
+            background: rgba(139, 92, 246, 0.1);
+            border: 2px solid #8b5cf6;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-tile::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .content-tile:hover {
+            transform: translateY(-10px);
+            border-color: #a855f7;
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.3);
+        }
+
+        .content-tile:hover::before {
+            left: 100%;
+        }
+
+        .tile-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .tile-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #a855f7;
+        }
+
+        .tile-description {
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        /* Hero section */
+        .hero {
+            text-align: center;
+            padding: 60px 0;
+            background: linear-gradient(rgba(139, 92, 246, 0.1), rgba(0, 0, 0, 0.8));
+            border: 1px solid #8b5cf6;
+            border-radius: 20px;
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .hero:hover {
+            box-shadow: 0 30px 60px rgba(139, 92, 246, 0.2);
+            transform: scale(1.02);
+            transition: all 0.3s ease;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #fff, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.7;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #8b5cf6, #a855f7);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.5);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid #8b5cf6;
+            margin-top: 60px;
+        }
+
+        .footer-text {
+            opacity: 0.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .logo {
+                font-size: 2rem;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+        }
+
+        /* Mouse cursor effect */
+        .cursor-glow {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.8), transparent);
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="cursor-glow"></div>
+
+    <div class="container">
+        <header class="header">
+            <div class="logo">MobileVerse</div>
+            <p class="tagline">The Future of Mobile Technology</p>
+        </header>
+
+        <section class="hero">
+            <h1 class="hero-title">Coming Soon</h1>
+            <p class="hero-subtitle">Revolutionary mobile phones that redefine innovation</p>
+            <button class="cta-button">Notify Me</button>
+        </section>
+
+        <div class="content-grid">
+            <div class="content-tile">
+                <span class="tile-icon">📱</span>
+                <h3 class="tile-title">Next-Gen Display</h3>
+                <p class="tile-description">Experience crystal-clear visuals with our revolutionary OLED technology that adapts to any lighting condition.</p>
+            </div>
+
+            <div class="content-tile">
+                <span class="tile-icon">🔋</span>
+                <h3 class="tile-title">All-Day Battery</h3>
+                <p class="tile-description">Power through your entire day and beyond with our advanced battery technology and smart power management.</p>
+            </div>
+
+            <div class="content-tile">
+                <span class="tile-icon">📸</span>
+                <h3 class="tile-title">Pro Camera System</h3>
+                <p class="tile-description">Capture life's moments in stunning detail with our AI-enhanced camera system and professional-grade lenses.</p>
+            </div>
+
+            <div class="content-tile">
+                <span class="tile-icon">🚀</span>
+                <h3 class="tile-title">Lightning Performance</h3>
+                <p class="tile-description">Experience unprecedented speed with our custom-built processor designed for the most demanding applications.</p>
+            </div>
+
+            <div class="content-tile">
+                <span class="tile-icon">🔒</span>
+                <h3 class="tile-title">Advanced Security</h3>
+                <p class="tile-description">Your data stays protected with multi-layer security including biometric authentication and encrypted storage.</p>
+            </div>
+
+            <div class="content-tile">
+                <span class="tile-icon">🌐</span>
+                <h3 class="tile-title">5G Connectivity</h3>
+                <p class="tile-description">Stay connected at blazing-fast speeds with our next-generation 5G technology and global network compatibility.</p>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p class="footer-text">&copy; 2025 MobileVerse. Launching Soon.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Create starry background
+        function createStars() {
+            const starsContainer = document.querySelector('.stars');
+            const numberOfStars = 100;
+
+            for (let i = 0; i < numberOfStars; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // Cursor glow effect
+        function initCursorGlow() {
+            const cursorGlow = document.querySelector('.cursor-glow');
+
+            document.addEventListener('mousemove', (e) => {
+                cursorGlow.style.left = e.clientX - 10 + 'px';
+                cursorGlow.style.top = e.clientY - 10 + 'px';
+            });
+        }
+
+        // Initialize effects
+        createStars();
+        initCursorGlow();
+
+        // Add click effect to CTA button
+        document.querySelector('.cta-button').addEventListener('click', function() {
+            alert('Thank you for your interest! We will notify you when we launch.');
+        });
+    </script>
+</body>
+</html>
