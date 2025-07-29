@@ -1,0 +1,28 @@
+body{
+    text-align: center;
+    background-color: antiquewhite;
+}
+h1{
+    background-color: chocolate;
+}
+label {
+    color:brown;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+input{
+    width: 250px;
+    height: 32px;
+    border: 4px solid ;
+    border-radius: 10px;
+    border-color: chocolate;
+    background-color: darkgray;
+    font-family: 'Times New Roman', Times, serif;
+}
+button{
+    color:brown;
+    font-family: 'Times New Roman', Times, serif;
+    border-color: chocolate;
+    border-radius: 10px;
+
+}
