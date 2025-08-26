@@ -1,0 +1,85 @@
+Live Character- Counter text-area
+
+1.FIELD:Textarea ( user input)
+Requirements: It cannot be empty,
+             Counts all the character typed(letters ,numbers , symbols).
+
+VALID INPUTS:
+"Hello World" -> Counter=11
+"12345" -> Counter=5
+"@#$%^&" -> Counter=6
+
+INVALID INPUTS:
+"  "(empty space) -> this will shows counter value to be zero, or sometimes it trigger and ask for the some validations.
+
+
+2.FIELD:  Character Counter
+Requirements: Must always reflect the current length of the Text area input .
+VALIDATION: Updates instantly on each keystroke.
+
+VALID INPUTS:
+ typing->counter increases the value.
+ backspacing-> counter decreases.
+ copy-paste-text->counter updates immediately.
+
+INVALID INPUTS:
+Counter not updating (js file is not working).
+
+3.FIELD: FORM SUBMISSION
+
+with non-empty text it is submit successfully
+with empty text it will give errors.
+
+CSS STYLING BREAKDOWN:
+
+1.ELEMENT: body
+background-color: #f2f2f2; → Light gray background for clean look.
+font-family: Arial, sans-serif; → Improves readability.
+
+2.ELEMENT :.container(Main box)
+Purpose: crates the neat container around heading , text-area and counter.
+properties:
+
+border: 1px solid #000; → Thin black border for clear visibility.
+padding: 15px; → Internal spacing.
+width: 600px; max-width: 100%; → Responsive width.
+margin-bottom: 20px; → Separation from other elements.
+
+3.ELEMENT: h2 (Heading)
+Purpose: Provides title "Live Character Counter".
+Property:
+font-size: 18px; → Medium-sized heading.
+ margin-bottom: 10px; → Spacing below heading.
+
+4. ELEMENT: text-area (User Input Area)
+Purpose: Input field for user text.
+Properties:
+width: 100%; height: 100px; → Large enough for typing.
+padding: 10px; → Comfortable spacing inside.
+font-size: 16px; → Easy-to-read text size.
+resize: none; → Prevents resizing box.
+
+5. ELEMENT: p (Counter Display)
+Purpose: Shows live character count.
+Property:
+ margin-top: 10px; → Keeps space between text-area and counter.
+ font-size: 14px; → Smaller size than heading.
+
+
+JAVASCRIPT file 
+
+
+FUNCTION: showCount()
+Purpose:
+To dynamically calculate and display the number of characters typed inside the text-area in real-time.
+
+Applies .length to this text string to compute the total number of characters.
+Updates the content of <span id="counter"> using .inner Text to reflect the live count.
+
+
+LEARNING OUTCOMES:
+
+1.Learn about the html tags and their semantic tags.<textarea>,<h2>,<p>,<span>
+2.Learn about the CSS and their styling about the layout
+3.Learn about the JavaScript, implement the real-time character counting.
+4.Learn about to bind the function(showcount()) by using java script.
