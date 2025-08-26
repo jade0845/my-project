@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SVG Drawing Tool</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="frame">
+    <h1>SVG Drawing Tool</h1>
+
+    <div class="toolbar">
+      <div class="group" role="radiogroup" aria-label="Tool">
+        <button id="tool-pen" class="active" title="Freehand (P)">✏️ Pen</button>
+        <button id="tool-line" title="Line (L)">／ Line</button>
+        <button id="tool-rect" title="Rectangle (R)">▭ Rect</button>
+      </div>
+      <div class="group">
+        <label>Stroke</label>
+        <input id="color" type="color" value="#198ad5" />
+        <input id="width" type="number" min="1" max="20" value="3" />
+      </div>
+      <div class="group">
+        <button id="undo" title="Undo (Ctrl+Z)">↶ Undo</button>
+        <button id="clear" title="Clear">🧹 Clear</button>
+      </div>
+      <div class="group">
+        <button id="downloadSvg">⬇️ Download SVG</button>
+      </div>
+    </div>
+
+    <div class="canvas-wrap">
+      <svg id="board" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <style>.ghost{stroke-dasharray:4 4;opacity:.7}</style>
+        </defs>
+        <rect x="0" y="0" width="100%" height="100%" fill="transparent" />
+        <g id="draw-layer"></g>
+        <g id="ghost-layer"></g>
+      </svg>
+    </div>
+
+    <p class="hint">Tip: Click & drag to draw. Use Pen to write like in the sample image. Press P / L / R to switch tools.</p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
