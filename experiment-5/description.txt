@@ -1,0 +1,76 @@
+ 
+
+1. FEATURE: Category Filter
+Requirement: Dropdown selection is required to filter products.
+             Default option should be All.
+             When a category is selected, only products belonging to that category should display.
+
+VALID CASES:
+Selecting All → Displays all products.
+Selecting Electronics → Displays "Laptop", "Smartphone".
+Selecting Books → Displays "Deep Learning", "Data Science".
+
+INVALID CASES:
+If category list is empty (not applicable in this implementation, handled by static options).
+If product data is missing a category → Product won't display.
+
+2. FEATURE: Product Display
+Requirement:
+Products should be displayed dynamically based on the selected category.
+Products appear in styled containers with spacing.
+
+VALID CASES:
+All products appear on initial load.
+Products update instantly when category changes.
+
+3. PAGE COMPONENTS & STYLING
+HTML Layout
+
+Purpose: Main structure of the Product Filter UI.
+
+
+
+CSS Styling Breakdown
+
+1. ELEMENT: body (Base Layout)
+Purpose: Sets font and padding.
+
+2. ELEMENT: .container (Main Box)
+Purpose: Provides border, padding, and center alignment.
+Properties and effects:
+max-width: 400px;
+    margin: auto;
+    border: 1px solid #000;
+    padding: 20px;
+    border-radius: 4px;
+
+
+ 3. ELEMENT: h2 (Heading)
+Purpose: Styles heading for prominence.
+Properties and effects:
+font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+
+
+ELEMENT: .product-item (Product Display Block)
+Purpose: Creates card-like styling for each product.
+Properties and effects:
+   border: 1px solid #eee;
+    padding: 10px;
+    margin-top: 8px;
+    border-radius: 4px;
+
+
+4. JAVASCRIPT FUNCTIONALITY
+
+Purpose: Handles category filtering dynamically.
+
+
+LEARNING OUTCOMES:
+Learned to create a dynamic product filter using HTML, CSS, and JavaScript.
+Implemented DOM manipulation for real-time updates without page reload.
+Practiced category-based filtering logic.
+Designed a user-friendly interface with min
+
+imal CSS styling.
